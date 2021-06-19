@@ -7,7 +7,7 @@ const fetchJSON = async (url, data = {}, type) => {
          'Content-type': 'application/json',
      }
   
-     if(type == "PUT" || type == "POST" || type == "PATCH"){
+     if(type === "PUT" || type === "POST" || type === "PATCH"){
          const res = await fetch(appUrl, {
              method: type,
              headers: headerContent,

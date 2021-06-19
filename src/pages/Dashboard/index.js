@@ -3,18 +3,16 @@ import Layout from '../../Components/Layout';
 import {Link} from "react-router-dom";
 import { Col, FormGroup, Row, CustomInput } from 'reactstrap';
 import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+    Card, CardBody,
+    CardTitle
   } from 'reactstrap';
 import img1 from '../../assets/img/phylogenetics.svg';
 import img2 from '../../assets/img/video.svg';
 import img3 from '../../assets/img/ufo.svg';
 import img4 from '../../assets/img/taxi.svg';
 import img5 from '../../assets/img/students.svg';
-import UserAvatar from '../../assets/img/avatar.png'
 import {fetchJSON} from '../../Helper/api';
 import LoadingOverlay from "react-loading-overlay";
-import Avatar from '@material-ui/core/Avatar';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -22,19 +20,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
   
-const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 const Dashboard = () => {
     const [films, setFilms] = useState([]);

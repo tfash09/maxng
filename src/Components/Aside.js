@@ -15,27 +15,27 @@ import {Link} from "react-router-dom";
 
 const Aside = ({ collapsed, toggled, handleToggleSidebar }) => {
 
-    const [open, setOpen] = React.useState(false);
+    const open = false;
     const anchorRef = React.useRef(null);
   
-    const handleToggle = () => {
-      setOpen((prevOpen) => !prevOpen);
-    };
+    // const handleToggle = () => {
+    //   setOpen((prevOpen) => !prevOpen);
+    // };
   
-    const handleClose = (event) => {
-      if (anchorRef.current && anchorRef.current.contains(event.target)) {
-        return;
-      }
+    // const handleClose = (event) => {
+    //   if (anchorRef.current && anchorRef.current.contains(event.target)) {
+    //     return;
+    //   }
   
-      setOpen(false);
-    };
+    //   setOpen(false);
+    // };
   
-    function handleListKeyDown(event) {
-      if (event.key === 'Tab') {
-        event.preventDefault();
-        setOpen(false);
-      }
-    }
+    // function handleListKeyDown(event) {
+    //   if (event.key === 'Tab') {
+    //     event.preventDefault();
+    //     setOpen(false);
+    //   }
+    // }
   
     // return focus to the button when we transitioned from !open -> open
     const prevOpen = React.useRef(open);
