@@ -22,6 +22,7 @@ const Layout = (props) =>{
                 collapsed={collapsed}
                 toggled={toggled}
                 handleToggleSidebar={handleToggleSidebar}
+                pageName={props.pageName}
             />
             <Main
                 toggled={toggled}

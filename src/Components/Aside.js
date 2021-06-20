@@ -13,7 +13,7 @@ import StarWars from '../assets/img/starwars.png';
 import {Link} from "react-router-dom";
 
 
-const Aside = ({ collapsed, toggled, handleToggleSidebar }) => {
+const Aside = ({ collapsed, toggled, handleToggleSidebar, pageName }) => {
 
     const open = false;
     const anchorRef = React.useRef(null);
@@ -73,11 +73,11 @@ const Aside = ({ collapsed, toggled, handleToggleSidebar }) => {
 
             <SidebarContent>
                 <Menu iconShape="circle">
-                    <MenuItem active icon={<MdDashboard />}><Link to="/dashboard">Dashboard</Link></MenuItem>
-                    <MenuItem icon={<FaBuilding />}><Link to="/starships">Starships</Link></MenuItem>
-                    <MenuItem icon={<MdShoppingBasket />}><Link to="/people">People</Link></MenuItem>
-                    <MenuItem icon={<FaTablet />}><Link to="/vehicles">Vehicles</Link></MenuItem>
-                    <MenuItem icon={<MdApps />}><Link to="/species">Species</Link></MenuItem>
+                    <MenuItem {...(pageName === "Dashboard" ? {active: 'true'} : {})} icon={<MdDashboard />}><Link to="/dashboard">Dashboard</Link></MenuItem>
+                    <MenuItem {...(pageName === "Starships" ? {active: 'true'} : {})}  icon={<FaBuilding />}><Link to="/starships">Starships</Link></MenuItem>
+                    <MenuItem {...(pageName === "People" ? {active: 'true'} : {})}  icon={<MdShoppingBasket />}><Link to="/people">People</Link></MenuItem>
+                    <MenuItem {...(pageName === "Vehicles" ? {active: 'true'} : {})}  icon={<FaTablet />}><Link to="/vehicles">Vehicles</Link></MenuItem>
+                    <MenuItem {...(pageName === "Species" ? {active: 'true'} : {})}  icon={<MdApps />}><Link to="/species">Species</Link></MenuItem>
                 </Menu>
             </SidebarContent>
 

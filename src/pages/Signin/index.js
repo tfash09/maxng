@@ -5,9 +5,11 @@ import Col from 'react-bootstrap/Col';
 import image1 from '../../assets/img/stars.svg';
 import image2 from '../../assets/img/Astronaut.svg';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { useHistory} from "react-router-dom"; 
 
 
 const Signin = () => {
+    let history = useHistory();
 
     return(
         <>
@@ -24,14 +26,17 @@ const Signin = () => {
                             <img src={image2} alt="Astronaut" />
                             <div className="form-container">
                                 <h4>Sign in to continue to your account.</h4>
-                                <Form className="mt-4">
+                                <Form className="mt-4" onSubmit={(e) => {
+                                    e.preventDefault();
+                                    history.push('/dashboard');
+                                }}>
                                     <FormGroup>
                                         <Label for="exampleEmail">Email address</Label>
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="Email address" />
+                                        <Input type="email" name="email" id="exampleEmail" placeholder="Email address" required />
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="examplePassword">Password</Label>
-                                        <Input type="password" name="password" id="examplePassword" placeholder="Enter strong password" />
+                                        <Input type="password" name="password" id="examplePassword" required placeholder="Enter strong password" />
                                     </FormGroup>
                                     <Button>Submit</Button>
                                 </Form>

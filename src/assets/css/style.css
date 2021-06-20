@@ -22,6 +22,12 @@ a {
     text-decoration: none !important;
 }
 
+.MuiTablePagination-toolbar {
+    min-height: 40px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
 .pro-sidebar-inner, header{
     background-color: #ffffff !important;
     box-shadow: 0 0 2px #B1BECA !important;
@@ -34,13 +40,6 @@ a {
 
 .pro-menu-item{
     margin: 3px auto;
-}
-
-.user-dropdown{
-    left: -35px !important;
-    top: 52px !important;
-    z-index: 10;
-    width: 200px;
 }
 
 .pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper {
@@ -62,6 +61,15 @@ a {
     max-height: 90%;
     overflow: auto;
     background-color: #F4F8FB;
+}
+
+.MuiTablePagination-spacer {
+    flex: none !important;
+}
+
+.makeStyles-input-5 {
+    flex: 1;
+    margin-left: 8px;
 }
 
 .content{
