@@ -6,10 +6,31 @@ import image1 from '../../assets/img/stars.svg';
 import image2 from '../../assets/img/Astronaut.svg';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useHistory} from "react-router-dom"; 
+import React, {useState} from 'react';
 
 
 const Signin = () => {
     let history = useHistory();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = (evt) => {
+        evt.preventDefault();
+        if(CheckPassword(password)){
+            history.push('/dashboard');
+        }
+    }
+
+    const CheckPassword = (inputtxt) => {
+        var paswd = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/;
+        if (inputtxt.match(paswd)) {
+            return true;
+        }
+        else {
+            alert('Password is not secure')
+            return false;
+        }
+    }
 
     return(
         <>
@@ -26,17 +47,14 @@ const Signin = () => {
                             <img src={image2} alt="Astronaut" />
                             <div className="form-container">
                                 <h4>Sign in to continue to your account.</h4>
-                                <Form className="mt-4" onSubmit={(e) => {
-                                    e.preventDefault();
-                                    history.push('/dashboard');
-                                }}>
+                                <Form className="mt-4" onSubmit={(e) => handleLogin(e) }>
                                     <FormGroup>
                                         <Label for="exampleEmail">Email address</Label>
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="Email address" required />
+                                        <Input onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="exampleEmail" placeholder="Email address" required />
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="examplePassword">Password</Label>
-                                        <Input type="password" name="password" id="examplePassword" required placeholder="Enter strong password" />
+                                        <Input onChange={(e) => setPassword(e.target.value)} type="password" name="password" id="examplePassword" required placeholder="Enter strong password" />
                                     </FormGroup>
                                     <Button>Submit</Button>
                                 </Form>
